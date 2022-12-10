@@ -27,7 +27,7 @@ function Main (props) {
     api.getInitialCards()
       .then(initialCards => {
         return initialCards.map(initialCard => {
-          return(<Card card={initialCard} onCardClick={props.onCardClick}/>);
+          return(<Card card={initialCard} onCardClick={props.onCardClick} key={initialCard._id}/>);
         })
       })
       .then((cardElements) => {setCards(cardElements)})

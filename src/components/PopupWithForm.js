@@ -14,6 +14,7 @@ export default function PopupWithForm (props) {
         <p className="popup__title">{props.title}</p>
         <form className="popup__form" name={props.name} noValidate>
           {props.children}
+          <button className="popup__save-button">{props.buttonText}</button>
         </form>
       </div>
     </div>

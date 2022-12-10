@@ -7,7 +7,7 @@ export default function Card (props) {
 
     return (
         <li className="card">
-            <img src={props.card.link} alt="Изображение" className="card__image" onClick={handleClick}/>
+            <img src={props.card.link} alt={props.card.name} className="card__image" onClick={handleClick}/>
             <h2 className="card__title">{props.card.name}</h2>
             <button className="card__like-button" type="button"></button>
             <p className="card__likes-number">{props.card.likes.length}</p>
