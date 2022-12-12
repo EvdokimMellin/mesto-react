@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Card from './Card';
 import addButton from '../images/add-button.svg';
 import avatarPencil from '../images/avatar-pencil.svg';
@@ -6,7 +6,7 @@ import { api } from '../utils/Api';
 import { CurrentUserContext } from '../contexts/CurrentUserCurrent';
 
 function Main (props) {
-  const currentUser = React.useContext(CurrentUserContext);
+  const currentUser = useContext(CurrentUserContext);
 
   return (
     <main className="content">

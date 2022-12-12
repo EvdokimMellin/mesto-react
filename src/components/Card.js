@@ -1,8 +1,8 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useContext } from "react"
 import { CurrentUserContext } from "../contexts/CurrentUserCurrent";
 
 export default function Card (props) {
-    const currentUser = React.useContext(CurrentUserContext);
+    const currentUser = useContext(CurrentUserContext);
     const isLiked = props.card.likes.some(like => like._id === currentUser._id);
 
     function DelButton () {
