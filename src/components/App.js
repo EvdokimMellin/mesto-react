@@ -43,23 +43,18 @@ function App() {
   }
 
   useEffect(() => {
-    api.getInitialCards()
-      .then(initialCards => {
+    Promise.all([api.getInitialCards(), api.getUserInfo()])
+      .then(([initialCards, userData]) => {
         setCards(initialCards.map(initialCard => {return {
           name: initialCard.name,
           link: initialCard.link,
           _id: initialCard._id,
           owner: initialCard.owner,
           likes: initialCard.likes
-        }}))
-        })
-      .then(() => api.getUserInfo())
-      .then((userData) => {
+        }}));
         setCurrentUser(userData);
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => console.log(err))
   }, [])
 
   function handleCardClick (card) {
