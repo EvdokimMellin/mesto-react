@@ -86,6 +86,15 @@ class Api {
     })
       .then(this._checkResponse);
   }
+
+  changeLikeCardStatus (cardId, isLiked) {
+    if (isLiked) {
+      return this.removeLike(cardId);
+    }
+    else {
+      return this.like(cardId);
+    }
+  }
 }
 
 const config = {

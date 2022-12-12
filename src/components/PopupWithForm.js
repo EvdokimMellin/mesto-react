@@ -1,6 +1,7 @@
 import React from 'react';
 
 export default function PopupWithForm (props) {
+
   function closeByOverlay (evt) {
     if (evt.target.classList.contains('popup')) {
       props.onClose();
